@@ -6,7 +6,7 @@ import ru.gcall.thenewboston.datasource.BankDataSource
 import ru.gcall.thenewboston.model.Bank
 
 @Service
-class BankService(@Qualifier("network") private val dataSource: BankDataSource) {
+class BankService(@Qualifier("mock") private val dataSource: BankDataSource) {
 
     fun getBanks(): Collection<Bank> = dataSource.retrieveBanks()
 

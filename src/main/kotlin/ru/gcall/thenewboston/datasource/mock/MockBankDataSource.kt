@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository
 import ru.gcall.thenewboston.datasource.BankDataSource
 import ru.gcall.thenewboston.model.Bank
 
-@Repository
+@Repository("mock")
 class MockBankDataSource : BankDataSource {
 
     val banks = mutableListOf(
