@@ -1,11 +1,12 @@
 package ru.gcall.thenewboston.service
 
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 import ru.gcall.thenewboston.datasource.BankDataSource
 import ru.gcall.thenewboston.model.Bank
 
 @Service
-class BankService(private val dataSource: BankDataSource) {
+class BankService(@Qualifier("network") private val dataSource: BankDataSource) {
 
     fun getBanks(): Collection<Bank> = dataSource.retrieveBanks()
 
